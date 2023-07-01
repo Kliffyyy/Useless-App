@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074E98032A4FBB320009006D /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074E98022A4FBB320009006D /* Persistence.swift */; };
 		07BAE4562A469F4C006189E9 /* Useless_AppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BAE4552A469F4C006189E9 /* Useless_AppApp.swift */; };
 		07BAE4582A469F4C006189E9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07BAE4572A469F4C006189E9 /* ContentView.swift */; };
 		07BAE45A2A469F4E006189E9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07BAE4592A469F4E006189E9 /* Assets.xcassets */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		074E98022A4FBB320009006D /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		07BAE4522A469F4C006189E9 /* Useless App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Useless App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		07BAE4552A469F4C006189E9 /* Useless_AppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Useless_AppApp.swift; sourceTree = "<group>"; };
 		07BAE4572A469F4C006189E9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -55,6 +57,7 @@
 			children = (
 				07BAE4552A469F4C006189E9 /* Useless_AppApp.swift */,
 				07BAE4572A469F4C006189E9 /* ContentView.swift */,
+				074E98022A4FBB320009006D /* Persistence.swift */,
 				07BAE4632A46A0AD006189E9 /* URLRequest.swift */,
 				07BAE4592A469F4E006189E9 /* Assets.xcassets */,
 				07BAE45B2A469F4E006189E9 /* Preview Content */,
@@ -141,6 +144,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				07BAE4642A46A0AD006189E9 /* URLRequest.swift in Sources */,
+				074E98032A4FBB320009006D /* Persistence.swift in Sources */,
 				07BAE4582A469F4C006189E9 /* ContentView.swift in Sources */,
 				07BAE4562A469F4C006189E9 /* Useless_AppApp.swift in Sources */,
 			);
