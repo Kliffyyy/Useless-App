@@ -8,9 +8,18 @@
 import SwiftUI
 
 struct SavedFactsView: View {
+    
+    @ObservedObject var factManager: FactManager = .shared
+    @State private var fact = ""
+    
     var body: some View {
-        VStack {
-            Text("hi")
+        List {
+            ForEach(factManager.facts, id: \.self) { fact in
+                Text(fact)
+            }
+            .onDelete { i in
+                factManager.facts.remove(atOffsets: i)
+            }
         }
     }
 }

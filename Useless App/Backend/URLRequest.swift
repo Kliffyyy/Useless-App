@@ -36,18 +36,25 @@ struct Fact: Codable {
     
 }
 
-func callAPI(){
-    guard let url = url_ else{
-        return
-    }
+func callAPI(completion: @escaping (String) -> Void, link: String){
+    guard let url = URL(string: link) else { return }
 
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
         
-        if let data = data, let string = String(data: data, encoding: .utf8) {
-            print(string)
+        let decoder = JSONDecoder()
+
+        if data != nil{
+            do {
+                let jsonData = try Data(contentsOf: url_!)
+                let text = try decoder.decode(Fact.self, from: jsonData)
+                completion(text.text)
+                
+            } catch {
+                print(error)
+                completion("access error")
+            }
         }
     }
-
     task.resume()
 }
 

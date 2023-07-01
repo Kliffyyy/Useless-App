@@ -37,7 +37,7 @@ struct MainView: View {
                 
                 Button {
                     // Save Fact
-                    factManager.facts.append(link)
+                    factManager.facts.append(fact)
                 } label: {
                     Text("Save Fact")
                         .padding()
