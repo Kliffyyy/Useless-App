@@ -26,7 +26,7 @@ let task = URLSession.shared.dataTask(with: url_!, completionHandler: { (data, r
           }
 })
 
-struct Post: Codable {
+struct Fact: Codable {
     let id: String
     let text: String
     let source: String
@@ -54,7 +54,7 @@ func callAPI(){
 //callAPI()
 
 
-func decodeAPI(completion: @escaping (String) -> Void) {
+func decodeAPI(completion: @escaping (String, String) -> Void) {
     guard let url = url_ else { return }
 
     let task = URLSession.shared.dataTask(with: url) { data, response, error in
@@ -69,12 +69,11 @@ func decodeAPI(completion: @escaping (String) -> Void) {
 //                let jsonString = String(data: jsonData, encoding: .utf8)
 //                print(jsonString)
 
-                let text = try decoder.decode(Post.self, from: jsonData)
-                print(text.text)
-                completion(text.text)
-//                return text.text
+                let text = try decoder.decode(Fact.self, from: jsonData)
+                completion(text.text, text.permalink)
             } catch {
                 print(error)
+                completion("access error", "No link availible")
             }
         }
     }
