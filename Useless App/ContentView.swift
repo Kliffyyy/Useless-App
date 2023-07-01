@@ -8,12 +8,20 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State var fact: String = "There is no current random fact"
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            Text(fact)
+            Button {
+                // fetch fact
+                decodeAPI { result in
+                    fact = result
+                }
+            } label: {
+                Text("Click Me")
+            }
         }
         .padding()
     }
