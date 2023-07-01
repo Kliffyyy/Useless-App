@@ -2,40 +2,24 @@
 //  ContentView.swift
 //  Useless App
 //
-//  Created by klifton Cheng stu on 24/6/23.
+//  Created by klifton Cheng stu on 1/7/23.
 //
 
 import SwiftUI
 
 struct ContentView: View {
-    
-    @State var fact: String = "There is no current random fact"
-    @State var link: String = ""
-    @ObservedObject var factManager: FactManager = .shared
-    
     var body: some View {
-        VStack {
-            
-            Text(fact)
-            
-            Button {
-                // fetch fact
-                decodeAPI { result, permalink  in
-                    fact = result
-                    link = permalink
-                }
-            } label: {
-                Text("Click Me")
+        TabView {
+            MainView()
+                .tabItem {
+                Image(systemName: "chart.line.downtrend.xyaxis")
             }
             
-            Button {
-                // Save Fact
-                factManager.facts.append(link)
-            } label: {
-                Text("save fact")
+            SavedFactsView()
+                .tabItem {
+                Image(systemName: "wand.and.stars.inverse")
             }
         }
-        .padding()
     }
 }
 
