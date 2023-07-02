@@ -15,7 +15,13 @@ struct SavedFactsView: View {
     var body: some View {
         List {
             ForEach(factManager.facts, id: \.self) { fact in
-                Text(fact)
+                Menu {
+                    ShareButtonElement(share: fact)
+                } label: {
+                    Text(fact)
+                        .foregroundColor(.primary)
+                        .multilineTextAlignment(.leading)
+                }
             }
             .onDelete { i in
                 factManager.facts.remove(atOffsets: i)

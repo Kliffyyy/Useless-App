@@ -12,8 +12,13 @@ struct ShareButtonElement: View {
     let share: String
     
     var body: some View {
-        ShareLink(item: share) {
-            Image(systemName: "square.and.arrow.up")
+        VStack {
+            ShareLink(item: share) {
+                Image(systemName: "square.and.arrow.up")
+                Text("Share Fact")
+            }
+            .padding()
+            .buttonStyle(.borderedProminent)
         }
     }
 }
